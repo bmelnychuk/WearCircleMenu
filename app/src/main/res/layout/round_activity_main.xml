@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,4 +12,12 @@
         android:id="@+id/circular_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <com.andexert.library.RippleView
+        app:rv_ripplePadding="-100dp"
+        android:visibility="gone"
+        android:id="@+id/ripple"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.andexert.library.RippleView>
+
 </RelativeLayout>

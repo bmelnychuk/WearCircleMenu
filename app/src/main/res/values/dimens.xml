@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="icon_font_size">36dp</dimen>
+    <dimen name="icon_font_size">48dp</dimen>
 </resources>

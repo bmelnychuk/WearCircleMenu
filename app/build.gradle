@@ -26,4 +26,5 @@ dependencies {
     compile 'com.google.android.gms:play-services-wearable:7.0.0'
     compile 'com.sababado.circularview:library:1.0.0'
     compile 'com.github.johnkil.print:print:1.2.3'
+    compile 'com.github.traex.rippleeffect:library:1.2.4'
 }

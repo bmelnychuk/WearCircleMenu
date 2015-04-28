@@ -17,8 +17,8 @@ public abstract class IconicItemClickAdapter implements CircularView.OnClickList
         // TODO maybe I should handle ClassCastException
         IconicNavigationAdapter iconicAdapter = (IconicNavigationAdapter) circularView.getAdapter();
         IconicNavigationAdapter.IconicItem item = iconicAdapter.getItemAt(i);
-        onItemClick(circularView, item);
+        onItemClick(circularView, item, marker);
     }
 
-    public abstract void onItemClick(CircularView circularView, IconicNavigationAdapter.IconicItem item);
+    public abstract void onItemClick(CircularView circularView, IconicNavigationAdapter.IconicItem item, Marker marker);
 }

@@ -9,11 +9,14 @@ import android.os.Handler;
 import android.support.wearable.view.WatchViewStub;
 import android.view.View;
 
+import com.andexert.library.RippleView;
 import com.bmelnychuk.wear.nav.adapter.IconicItemClickAdapter;
 import com.bmelnychuk.wear.nav.adapter.IconicNavigationAdapter;
 import com.bmelnychuk.wear.nav.animation.AnimationsUtil;
 import com.sababado.circularview.CircularView;
+import com.sababado.circularview.Marker;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +30,7 @@ public class MainActivity extends Activity {
     public static final int DURATION = 600;
 
     private CircularView circularView;
+    private RippleView ripple;
 
     private Animator.AnimatorListener defaultAnimListener = new AnimatorListenerAdapter() {
         @Override
@@ -46,13 +50,21 @@ public class MainActivity extends Activity {
             public void onLayoutInflated(WatchViewStub stub) {
                 IconicNavigationAdapter mAdapter = new IconicNavigationAdapter(MainActivity.this, getNavigationItems());
                 circularView = (CircularView) findViewById(R.id.circular_view);
+                ripple = (RippleView) findViewById(R.id.ripple);
                 circularView.setAdapter(mAdapter);
 
                 //You can use CircularView.OnClickListener instead
                 circularView.setOnCircularViewObjectClickListener(new IconicItemClickAdapter() {
                     @Override
-                    public void onItemClick(CircularView circularView, IconicNavigationAdapter.IconicItem item) {
-                        DetailActivity.DetialActivityInput detailsInput = new DetailActivity.DetialActivityInput();
+                    public void onItemClick(CircularView cView, IconicNavigationAdapter.IconicItem item, Marker marker) {
+                        ripple.setVisibility(View.VISIBLE);
+                        ripple.animateRipple(marker.getX(), marker.getY());
+
+                        // Issue posted on developers github account, reflection used as temp solution
+                        // but I dont like the result, you can try it
+                        // updateRippleColor(item.getColor());
+
+                        final DetailActivity.DetialActivityInput detailsInput = new DetailActivity.DetialActivityInput();
                         detailsInput.color = item.getColor();
 
                         switch (((NavigationItem) item).getId()) {
@@ -73,11 +85,19 @@ public class MainActivity extends Activity {
                                 break;
                         }
 
-                        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                        intent.putExtra("input", detailsInput);
-                        startActivity(intent);
-                        circularView.setVisibility(View.GONE);
+                        //This handler used for ripple effect
+                        Handler myHandler = new Handler();
+                        myHandler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                                intent.putExtra("input", detailsInput);
+                                startActivity(intent);
+                                circularView.setVisibility(View.GONE);
+                                ripple.setVisibility(View.GONE);
+                            }
+                        }, 1000);
                     }
                 });
 
@@ -91,6 +111,17 @@ public class MainActivity extends Activity {
                 }, 600);
             }
         });
+    }
+
+    private void updateRippleColor(int color) {
+        try {
+            Field field = RippleView.class.getDeclaredField("rippleColor");
+            field.setAccessible(true);
+            field.setInt(ripple, color);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override

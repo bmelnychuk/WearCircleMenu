@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Bogdan Melnychuk
  */
 public abstract class CircularNavigationAdapter<E> extends SimpleCircularViewAdapter {
-    public static final int DEFAULT_RADIUS = 40;
+    public static final int DEFAULT_RADIUS = 50;
 
     private List<E> objects;
 
