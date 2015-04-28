@@ -24,4 +24,6 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.google.android.support:wearable:1.1.0'
     compile 'com.google.android.gms:play-services-wearable:7.0.0'
+    compile 'com.sababado.circularview:library:1.0.0'
+    compile 'com.github.johnkil.print:print:1.2.3'
 }

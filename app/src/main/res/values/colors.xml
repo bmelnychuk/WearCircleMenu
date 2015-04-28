@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="play_music">#FB8521</color>
+    <color name="play_books">#1AA1E1</color>
+    <color name="play_movies">#CE5043</color>
+    <color name="play_apps">#B3C833</color>
+    <color name="google_fit">#C41363</color>
+
+
+</resources>
