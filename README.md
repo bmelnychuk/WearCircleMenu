@@ -8,11 +8,11 @@ This is rather showcase app of my implmentation of simple wear navigation page. 
 + 4. Ripple effect on click event
 + 5. Works smoothly on round and square screens
  
-<img width='300' hspace='20' align='left' src='https://lh5.googleusercontent.com/mL_W4MWy3n1VFSIHJdx1r9DJWl3amQa6GAsdElHZ7ID_vie6KC5Ou-zfQfl196WZcc-Nm7vU=w1896-h843' />
+<img width='300' hspace='20' align='left' src='https://drive.google.com/uc?id=0B3hs6EXn55WUV1dDT3dBVVNudjg' />
 <br clear="all"/>
 <br clear="all"/>
-<img width='300' hspace='20' align='left' src='https://lh3.googleusercontent.com/s8yIGJ83cbveRPUgcTBbDG9hY_8LDT_3KSmUzM-WeeJzTvTK6dT24FYhQGIDubcJoNLfRvQF=w1896-h843' />
-<img width='300' hspace='20' src='https://lh3.googleusercontent.com/_yhNcnmPa9whmMM-qN7JvEsGeIvVbiwIpxjxdLHwZBybWYMmY8zGgzdyuQORAOzpEoImrM5N=w1896-h843' />
+<img width='300' hspace='20' align='left' src='https://drive.google.com/uc?id=0B3hs6EXn55WUMkEzRk52ZkNSODQ' />
+<img width='300' hspace='20' src='https://drive.google.com/uc?id=0B3hs6EXn55WUdWtRdTNfUjNEdTA' />
  
  <br clear="all"/>
 
