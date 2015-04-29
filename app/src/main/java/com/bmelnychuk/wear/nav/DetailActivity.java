@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class DetailActivity extends Activity {
 
     private TextView mTextView;
-    private DetialActivityInput input;
+    private DetailsActivityInput input;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class DetailActivity extends Activity {
         setContentView(R.layout.activity_detail);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            input = (DetialActivityInput) extras.getSerializable("input");
+            input = (DetailsActivityInput) extras.getSerializable("input");
         }
         final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
@@ -35,7 +35,7 @@ public class DetailActivity extends Activity {
         });
     }
 
-    public static class DetialActivityInput implements Serializable {
+    public static class DetailsActivityInput implements Serializable {
         public String text;
         public int color;
     }

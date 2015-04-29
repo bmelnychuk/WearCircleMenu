@@ -6,7 +6,7 @@ import com.sababado.circularview.Marker;
 /**
  * Created by bogdan.melnychuk on 28.04.2015.
  */
-public abstract class IconicItemClickAdapter implements CircularView.OnClickListener {
+public abstract class IconicItemClickAdapter<E extends IconicNavigationAdapter.DrawableItem> implements CircularView.OnClickListener {
     @Override
     public void onClick(CircularView circularView) {
 
@@ -15,10 +15,10 @@ public abstract class IconicItemClickAdapter implements CircularView.OnClickList
     @Override
     public void onMarkerClick(CircularView circularView, Marker marker, int i) {
         // TODO maybe I should handle ClassCastException
-        IconicNavigationAdapter iconicAdapter = (IconicNavigationAdapter) circularView.getAdapter();
-        IconicNavigationAdapter.IconicItem item = iconicAdapter.getItemAt(i);
+        IconicNavigationAdapter<E> iconicAdapter = (IconicNavigationAdapter) circularView.getAdapter();
+        E item = iconicAdapter.getItemAt(i);
         onItemClick(circularView, item, marker);
     }
 
-    public abstract void onItemClick(CircularView circularView, IconicNavigationAdapter.IconicItem item, Marker marker);
+    public abstract void onItemClick(CircularView circularView, E item, Marker marker);
 }
