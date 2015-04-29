@@ -1,4 +1,4 @@
-# AndroidWearNavigation
+# WearCircleMenu
 ### Description
 This is rather showcase app of my implmentation of simple wear navigation page. Basically this is circle menu, was used as start page in my app.
 ### Features
