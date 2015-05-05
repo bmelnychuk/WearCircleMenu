@@ -1,4 +1,6 @@
 # WearCircleMenu
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-WearCircleMenu-brightgreen.svg?style=flat)](http://android-arsenal.com/details/3/1754)
+
 ### Description
 This is rather showcase app of my implmentation of simple wear navigation page. Basically this is circle menu, was used as start page in my app.
 ### Features
